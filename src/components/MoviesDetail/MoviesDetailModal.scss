@@ -1,0 +1,145 @@
+.MoviesDetailModal {
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    animation: fadeIn 1s cubic-bezier(0.17, 0.85, 0.45, 1) forwards;
+
+    @keyframes fadeIn {
+      0% {
+        background: #000000;
+      }
+      100% {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  .showBackdrop {
+    display: block;
+  }
+
+  .hideBackdrop {
+    display: none;
+  }
+
+  .modal {
+    position: fixed;
+    width: 100%;
+    top: 25vh;
+    left: 0;
+    z-index: 300;
+    height: 65%;
+    margin: 0 auto;
+    color: var(--color-white);
+    box-shadow: 0 15px 40px rgba(var(--color-dark), 0.2);
+    transition: all 0.3s ease;
+
+    @media screen and (max-width: 1184px) {
+      height: 75%;
+      top: 15vh;
+      height: 30vh;
+    }
+    @media screen and (max-width: 600px) {
+      height: 85%;
+    }
+
+    .container {
+      position: relative;
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.94) 60%, transparent);
+
+      @media screen and (max-width: 1184px) {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.95) 40%,
+          rgba(0, 0, 0, 0.733) 50%,
+          transparent
+        );
+        width: 88%;
+      }
+      @media screen and (max-width: 980px) {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.95) 50%,
+          transparent
+        );
+        width: 100%;
+      }
+      @media screen and (max-width: 600px) {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.88) 60%,
+          transparent
+        );
+      }
+
+      .movieInfo {
+        width: 65%;
+        height: 100%;
+        padding-left: 24px;
+        padding-top: 30px;
+        color: var(--color-white);
+        font-size: 20px;
+
+        @media screen and (max-width: 600px) {
+          font-size: 16px;
+          width: 80%;
+        }
+
+        .movieTitle {
+          margin-top: 30px;
+        }
+
+        .statistical {
+          margin-top: 20px;
+          display: flex;
+
+          .rating {
+            color: var(--color-green);
+          }
+
+          .popularity {
+            color: yellow;
+            margin-left: 12px;
+          }
+        }
+        .releaseDate,
+        .runtime {
+          margin-top: 12px;
+        }
+
+        .overview {
+          margin-top: 20px;
+          color: #d3d3d3;
+          line-height: 1.4;
+          font-size: 18px;
+
+          @media screen and (max-width: 600px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.showModal {
+  top: 25%;
+  opacity: 1;
+  left: 0;
+  visibility: visible;
+  transition: 0.3s ease-in-out;
+}
+
+.hideModal {
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}

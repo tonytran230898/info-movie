@@ -1,0 +1,95 @@
+.navigation {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 200;
+
+  @media only screen and (max-width: 768px) {
+    height: 100px;
+  }
+
+  .navContainer {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .navContainerLeft {
+      display: flex;
+      .logo {
+        width: 120px;
+        cursor: pointer;
+        margin-left: 30px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .navSearch {
+        color: var(--color-white);
+        padding-right: 25px;
+        display: flex;
+        justify-content: flex-end;
+
+        &:hover .iconSearch {
+          color: var(--color-white);
+        }
+
+        .iconSearch {
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+          transform: translateX(30px) translateY(8px);
+          color: #bbb;
+        }
+
+        input {
+          font-size: 14px;
+          border: 1px solid var(--color-white);
+          color: var(--color-white);
+          outline: none;
+          background-color: transparent;
+          width: 0;
+          padding: 0 10px;
+          cursor: pointer;
+          opacity: 0;
+          transition: 0.5s;
+
+          &:focus {
+            padding-left: 32px;
+            width: 300px;
+            cursor: text;
+            opacity: 1;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+
+    .navContainerRight {
+      display: flex;
+      margin-right: 30px;
+      width: 15%;
+      justify-content: space-between;
+
+      h3 {
+        color: var(--color-white);
+        cursor: pointer;
+        transform: scale(1);
+        transition: all 0.3s linear;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
